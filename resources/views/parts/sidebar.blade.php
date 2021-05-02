@@ -11,6 +11,11 @@
             </a>
         </li>
         <li>
+            <a href="{{ route('companies.index') }}">
+                Companies
+            </a>
+        </li>
+        <li>
             <a href="">
                 Logout
             </a>
