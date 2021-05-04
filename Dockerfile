@@ -1,10 +1,11 @@
 FROM php:8-apache
-ARG BUILD_ENV
 
 WORKDIR /var/www/html
 
-## -- Copy sources
 ADD . /var/www/html
 
-## Copy apache configurations
 COPY docker/php-dev.ini /usr/local/etc/php/php.ini
+
+RUN a2enmod rewrite
+
+RUN docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable pdo_mysql
